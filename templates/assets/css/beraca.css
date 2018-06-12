@@ -1,0 +1,35 @@
+.dropdown, .btn, .typography-line, .z-1 {
+	z-index: 2;
+}
+
+.dropdown, .btn-go {margin: 0.2em;}
+
+.beraca-container {
+	margin-top: -20vh;
+}
+.beraca-container .typography-line {
+	padding-left: 0px;
+
+}
+.justify-content {
+	justify-content: center;
+}
+
+.product_name{
+  font-weight: 500;
+  font-size: 1.6em;
+  line-height: 1.5em;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.plus_div a{
+  float: right;
+  color: white;
+  font-size: 2em;
+}
+
+.descriptions_block {
+	    max-height: none;
+    overflow-y: hidden;
+}

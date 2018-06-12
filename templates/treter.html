@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+{% load  staticfiles %}
+{% block content %}
+
+
+		<!-- Content -->
+		<div class="wrapper">
+			<div class="page-header" style="background-image: url('assets/img/search-image.jpg');">
+				<div class="container beraca-container">
+
+                            <div class="typography-line">
+                                {% if user.is_authenticated %}
+                                <h3>
+                                    Bem vindo, {{ user }}
+                                </h3>
+                            </div>
+                            <div class="typography-line">
+                            	<h5>
+                                Escolha o produto, range de investimento e o tipo de projeto a apoiar:
+                            	</h5>
+                            </div>
+
+<div class="row center-content">
+
+    <script type="application/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+<div class="row center">
+    <select id="products" class="btn btn-danger dropdown-toggle">
+        <option value="">PRODUTO</option>
+    </select>
+&nbsp;
+    <select id="range" class="btn btn-danger dropdown-toggle">
+        <option value="">RANGE INVESTIMENTO</option>
+    </select>
+&nbsp;
+    <select id="categories" class="btn btn-danger dropdown-toggle">
+        <option value="" >TIPO DE PROJETO</option>
+    </select>
+&nbsp;
+</div>
+&nbsp;
+    <p id="msg"></p>
+    <p id="msg1"></p>
+    <p id="msg2"></p>
+    <p id="msg3"></p>
+
+    <button type="button" class="btn btn-danger btn-go">BUSCAR</button>
+</div>
+
+
+				</div>
+
+			</div>
+
+            {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+
+
+			<!-- end content -->
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="wrapper">
+			<div class="page-header" style="background-image: url('assets/img/search-image.jpg');">
+				<div class="container beraca-container">
+
+                            <div class="typography-line">
+                                {% if user.is_authenticated %}
+                                <h3>
+                                    Bem vindo, {{ user }}
+                                </h3>
+                            </div>
+                            <div class="typography-line">
+                            	<h5>
+                                Escolha o produto, range de investimento e o tipo de projeto a apoiar:
+                            	</h5>
+                            </div>
+
+
+                                    <div class="row justify-content">
+				<div class="dropdown">
+  					<button class="btn btn-danger dropdown-toggle" type="button" value="Number of partners :" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+ 					 Produto
+ 					<span class="caret"></span>
+				 	</button>
+  					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  					  <li class="dropdown-item"><a href="#">Muru-muru</a></li>
+  					  <li class="dropdown-item"><a href="#">Cupuaçu</a></li>
+  					  <li class="dropdown-item"><a href="#">Açai</a></li>
+  					</ul>
+				</div>
+								&nbsp;
+
+				<div class="dropdown">
+  					<button class="btn btn-danger dropdown-toggle" type="button" value="Number of partners :" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+ 					 Range Investimento
+ 					<span class="caret"></span>
+				 	</button>
+  					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  					  <li class="dropdown-item"><a href="#">Até R$ 10.000,00</a></li>
+  					  <li class="dropdown-item"><a href="#">De R$ 10.000,00 a R$ 30.000,00</a></li>
+  					  <li class="dropdown-item"><a href="#">De R$ 30.000,00 a R$ 50.000,00</a></li>
+  					  <li class="dropdown-item"><a href="#">Acima de R$ 50.000,00</a></li>
+  					</ul>
+				</div>
+								&nbsp;
+
+				<div class="dropdown">
+  					<button class="btn btn-danger dropdown-toggle" type="button" value="Number of partners :" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+ 					 Tipo de Projeto
+ 					<span class="caret"></span>
+				 	</button>
+  					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+  					  <li class="dropdown-item"><a href="#">Infraestrutura</a></li>
+  					  <li class="dropdown-item"><a href="#">Social</a></li>
+  					  <li class="dropdown-item"><a href="#">Exclusivo</a></li>
+  					</ul>
+				</div>
+
+								&nbsp;
+				<button type="button" class="btn btn-warning btn-go">BUSCAR</button>
+				</div>
+
+
+
+<div class="row center-content">
+
+    <script type="application/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+<div class="row center">
+    <select id="products" class="btn btn-danger dropdown-toggle">
+        <option value="">PRODUTO</option>
+    </select>
+&nbsp;
+    <select id="range" class="btn btn-danger dropdown-toggle">
+        <option value="">RANGE INVESTIMENTO</option>
+    </select>
+&nbsp;
+    <select id="categories" class="btn btn-danger dropdown-toggle">
+        <option value="" >TIPO DE PROJETO</option>
+    </select>
+&nbsp;
+</div>
+&nbsp;
+    <p id="msg"></p>
+    <p id="msg1"></p>
+    <p id="msg2"></p>
+    <p id="msg3"></p>
+
+    <button type="button" class="btn btn-danger btn-go">BUSCAR</button>
+</div>
+
+
+				</div>
+
+			</div>
+
+            {% else %}
+    <p>Please login to see this page.</p>
+    {% endif %}
+
+
+			<!-- end content -->
+
