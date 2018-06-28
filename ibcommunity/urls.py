@@ -9,6 +9,8 @@ from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify
 
 from django.contrib.auth import views as auth_views
 
+
+
 urlpatterns = [
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', admin.site.urls),
@@ -24,12 +26,13 @@ urlpatterns = [
     url(r'^api/auth/', include('ibcommunity.api.urls')), # API Auth - URLs
 
     url(r'^index/', include('client.urls')), # API Auth - URLs
-#    url(r'^$/', include('client.urls')), # API Auth - URLs
+    #url(r'^', include('client.urls')), # API Auth - URLs
 
 
-    url(r'^index/login/', auth_views.LoginView.as_view(template_name='registration/login.html')),  # API Auth - URLs
-    url(r'^index/logout/', auth_views.LogoutView.as_view()),  # API Auth - URLs
-    url(r'^index/client/', include('client.urls')),  # API Auth - URLs
+    #url(r'^index/login/', auth_views.LoginView.as_view(template_name='registration/login.html')),  # API Auth - URLs
+    url(r'^accounts/', include('accounts.urls', namespace='accounts'))
+    #url(r'^index/logout/', auth_views.LogoutView.as_view()),  # API Auth - URLs
+    #url(r'^index/client/', include('client.urls')),  # API Auth - URLs
 
 ]
 
