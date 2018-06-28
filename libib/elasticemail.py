@@ -5,7 +5,7 @@ from enum import Enum
 #	apiKey = '13fbc116-f2e9-4698-b192-12beec07342b' - simpson
 class ApiClient:
 	apiUri = 'https://api.elasticemail.com/v2'
-	apiKey = "" #'fd12293b-b0f5-47d2-b55d-bc73b1ce3f7f'
+	apiKey = 'fd12293b-b0f5-47d2-b55d-bc73b1ce3f7f'
 
 	def Request(method, url, data):
 		data['apikey'] = ApiClient.apiKey
@@ -26,8 +26,8 @@ class ApiClient:
 			return jsonMy['error']
 
 		return jsonMy['data']
-
-def SendElastic(subject, to_list, html_body, mail_from="contato@institutoberaca.org"):
+#contato@institutoberaca.org
+def SendElastic(subject, to_list, html_body, mail_from="cleyton.flb@gmail.com"):
 	return ApiClient.Request('POST', '/email/send', {
 		'subject': subject,
 		'from': mail_from,
