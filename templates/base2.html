@@ -20,11 +20,16 @@
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css'>
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
 	<link href="{% static 'assets/css/nucleo-icons.css' %}" rel="stylesheet" />
-
+    <style>
+.navbar:not(.navbar-transparent) .alert {
+  top: 7px !important;
+}
+	</style>
 </head>
 <body>
 	<!-- Navbar -->
-	<nav class="navbar navbar-expand-md fixed-top navbar-transparent" color-on-scroll="150">
+	{% block navbar %}
+	<nav class="navbar navbar-expand-md fixed-top navbar-transparent" color-on-scroll="1">
 		<div class="container">
 			<div class="navbar-translate">
 				<button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,154 +40,92 @@
 				<a class="navbar-brand" href="#"><img class="logo-img" src="{% static 'assets/img/logo-beraca-horizontal.svg' %}" /></a>
 			</div>
 			<div class="collapse navbar-collapse" id="navbarToggler">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-						<a class="nav-link" rel="tooltip" title="Instituto Beraca" data-placement="bottom" href="http://www.institutoberaca.org/apoieumprojeto" target="_blank">
-							<i class="nc-icon nc-alert-circle-i"></i>
-							<p class="d-lg-none">Know more</p>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" rel="tooltip" title="Sair" data-placement="bottom" href="http://www.institutoberaca.org" target="_blank">
-							<i class="nc-icon nc-simple-remove"></i>
-							<p class="d-lg-none">Logout</p>
-						</a>
-					</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<!-- end navbar  -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Instituto Beraca" data-placement="bottom" href="http://www.institutoberaca.org/apoieumprojeto" target="_blank">
+                            <i class="nc-icon nc-alert-circle-i"></i>
+                            <p class="d-lg-none">Know more</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Sair" data-placement="bottom" href="/accounts/profile/">
+                            <i class="nc-icon nc-circle-10"></i>
+                            <p class="d-lg-none">Profile</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Sair" data-placement="bottom" href="/accounts/logout/">
+                            <i class="nc-icon nc-simple-remove"></i>
+                            <p class="d-lg-none">Logout</p>
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+	</nav><!-- end navbar  -->
+	{% endblock navbar %}
 		<!-- Content -->
 		<div class="wrapper">
 			<div class="page-header" >
-				<div class="container beraca-intro-container">
+				
+				<div class="container beraca-intro-container"><!-- Container -->
 
-                            <div class="typography-line text-center">
-                                <br><br><br><br><br><br><br><br><br><br><br><br>
+                    <div class="typography-line text-center">
+                <div id="resposta"></div>                
                                 {% if user.is_authenticated %}
-                                <h3>
+                                <h3 style="margin-top: 15%">
                                     Welcome, {{ user }}
                                 </h3>
                                 {% endif %}
-                            </div>
-                            <div class="typography-line text-center">
+                    </div>
+                    <div class="typography-line text-center">
                             	<h5 class="heavy">
                                 Please, choose the product, investment range and type of project to support:
                             	</h5>
-                            </div>
-                <div class="row justify-content">
+                    </div>
+                	<div class="form-row justify-content"><!-- SELECT Projects -->
 
-                <script type="application/javascript"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		                <script type="application/javascript"></script>
+		    			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
+						<div class="col-lg-4 col-md-4 mt-4">
+					    <select id="products" class="btn bg-danger text-light form-control  dropdown-toggle1">
+					        <option value="" class="btn btn-danger" >Product</option>
+					    </select>
+						</div>
 
+						<div class="col-lg-4 col-md-5 mt-4">
+					    <select id="range" class="btn form-control bg-danger dropdown-toggle1 text-light">
+					        <option value="">Investment range</option>
+					    </select>
+						</div>
+						<div class="col-lg-4 col-md-3 mt-4">
+					    <select id="categories" class="btn form-control  bg-danger text-light dropdown-toggle1">
+					        <option value="" >Type of project</option>
+					    </select>
+						</div>
+					 
+					 
+					 
 
+					
+		                <button id="button-search" type="button" class="btn col-lg-3 col-md-3 col-sm-9 col-xs-9 btn-defautl btn-go" id="b1" value="b1" >GO</button>
 
-    <select id="products" class="btn btn-danger dropdown-toggle">
-        <option value="" class="btn btn-link btn-danger" >Product</option>
-    </select>
-&nbsp;
-    <select id="range" class="btn btn-danger dropdown-toggle">
-        <option value="">Investment range</option>
-    </select>
-&nbsp;
-    <select id="categories" class="btn btn-danger dropdown-toggle">
-        <option value="" >Type of project</option>
-    </select>
-
-
-
-    <p id="msg"></p>
-    <p id="msg1"></p>
-    <p id="msg2"></p>
-    <p id="msg3"></p>
-
-
-
-
-
-				<!--<div class="dropdown">
-  					<button class="btn btn-danger dropdown-toggle" type="button" value="Number of partners :" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
- 					 Product
- 					<span class="caret"></span>
-				 	</button>
-  					<ul id="products" class="dropdown-menu p" aria-labelledby="dropdownMenu1">
-
-  					</ul>
-				</div>
-								&nbsp;
-
-				<div class="dropdown">
-  					<button class="btn btn-danger dropdown-toggle" type="button" value="Number of partners :" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
- 					 Investment range
- 					<span class="caret"></span>
-				 	</button>
-  					<ul id="range" class="dropdown-menu r" aria-labelledby="dropdownMenu1">
-
-  					</ul>
-				</div>
-								&nbsp;
-
-				<div class="dropdown">
-  					<button class="btn btn-danger dropdown-toggle" type="button" value="Number of partners :" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
- 					 Type of project
- 					<span class="caret"></span>
-				 	</button>
-  					<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-  					  <li class="dropdown-item"><a class="btn btn-link btn-danger" href="#">infrastructure</a></li>
-  					  <li class="dropdown-item"><a class="btn btn-link btn-danger" href="#">Social</a></li>
-  					  <li class="dropdown-item"><a class="btn btn-link btn-danger" href="#">Exclusive</a></li>
-  					</ul>
-				</div>
-
-						-->		&nbsp;
-                <button id="button-search" type="button" class="btn btn-defautl btn-go" id="b1" value="b1" >GO</button>
-
-				</div>
+					</div><!-- END SELECT Projects -->
 
 
+	                
+					    <div id="msgresult" class="col-md-12 mt-4 text-justify center">
+					         
+					    </div>
+	                
+
+	                <div id="resultado" class="row result-line mt-3">
+
+                    </div>
 
 
-                <div class="row z-1">
-    <div class="col-md-12 mt-4">
-         <h6>Exibindo resultados de projetos com range de investimento menor ou igual a R$ 100000. Clique no título do projeto para saber mais</h6>
-    </div>
-                </div>
-
-<!--
-                <div class="row z-1 mt-3">
-                            <div class="col-md-12">
-                                <div class="outer_product pt-20">
-                                    <div id="resultado" class="result-line mt-3">
-
-                                    </div>
-                                </div>
-                            </div>
-                </div>
-
--->
-
-                    <div class="row z-1 mt-3">
-                            <div class="col-md-10 col-md-offset-1">
-                                <div class="outer_product pt-20">
-                                    <div id="resultado" class="result-line mt-3">
-
-                                    </div>
-                                </div>
-                            </div>
-                </div>
-
-
-
-
-
-
-
-
-
-
-				</div>
+				</div><!-- END Container -->
 
 			</div>
 
