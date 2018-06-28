@@ -1,24 +1,27 @@
+
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8" />
-	<link rel="icon" type="image/png" href="assets/img/favicon.ico">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.ico'  %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>ReparteBR {beta}</title>
+    <title>Instituto Beraca - Apoie um projeto</title>
 
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-	<meta name="viewport" content="width=device-width" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
 
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="assets/css/paper-kit.css?v=2.1.0" rel="stylesheet"/>
-	<link href="assets/css/demo.css" rel="stylesheet" />
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/paper-kit.css' %}" rel="stylesheet"/>
+    <link href="{% static 'assets/css/demo.css' %}" rel="stylesheet" />
+    <link href="{% static 'assets/css/beraca.css' %}" rel="stylesheet" />
 
-	<!--     Fonts and icons     -->
-	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css'>
-	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-	<link href="assets/css/nucleo-icons.css" rel="stylesheet" />
-
+    <!--     Fonts and icons     -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css'>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{% static 'assets/css/nucleo-icons.css' %}" rel="stylesheet" />
+    
 </head>
 <body>
     <!-- Navbar -->
@@ -32,45 +35,49 @@
                 </button>
                 <a class="navbar-brand" href="#">IBCommunity</a>
             </div>
+            
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link"><i class="nc-icon nc-layout-11"></i>Repartir</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" target="" class="nav-link"><i class="nc-icon nc-ruler-pencil"></i>Projetos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" target="">
-                            <i class="nc-icon nc-shop"></i>Comunidades</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Perfil" data-placement="bottom" href="#" target="">
-                            <i class="nc-icon nc-badge"></i>
-                            <p class="d-lg-none">Meu Perfil</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Perfil" data-placement="bottom" href="http://www.institutoberaca.org" target="_blank">
+                        <a class="nav-link" rel="tooltip" title="Instituto Beraca" data-placement="bottom" href="http://www.institutoberaca.org/apoieumprojeto" target="_blank">
                             <i class="nc-icon nc-alert-circle-i"></i>
-                            <p class="d-lg-none">Saiba Mais</p>
+                            <p class="d-lg-none">Know more</p>
                         </a>
                     </li>
-                </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Profile" data-placement="bottom" href="/accounts/profile/">
+                            <i class="nc-icon nc-circle-10"></i>
+                            <p class="d-lg-none">Profile</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Search" data-placement="bottom" href="/index/search/">
+                            <i class="nc-icon nc-zoom-split"></i>
+                            <p class="d-lg-none">Search</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Logout" data-placement="bottom" href="/accounts/logout/">
+                            <i class="nc-icon nc-simple-remove"></i>
+                            <p class="d-lg-none">Logout</p>
+                        </a>
+                    </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        
     </nav>
     <!-- end navbar  -->
     <!-- Content -->
     <div class="wrapper">
-        <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('assets/img/fabio-mangione.jpg');">
+        <div class="page-header page-header-xs" data-parallax="true" style="background-image: url({% static 'assets/img/fabio-mangione.jpg' %});">
             <h1 class="title moto">Meu Perfil</h1>
             <div class="filter"></div>
         </div>
         <div class="section profile-content">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-5 ml-auto mr-auto">
+                    <div class="col-lg-6 ml-auto mr-auto">
                         <div class="card card-profile pl-4 pb-4 pr-4">
                             <div class="nav-tabs-navigation">
                                 <div class="nav-tabs-wrapper">
@@ -87,6 +94,7 @@
                                     </ul>
                                 </div>
                             </div>
+                            
                             <!-- Tab panes -->
                             <div class="tab-content following">
                                 <div class="tab-pane active" id="account" role="tabpanel">
@@ -94,24 +102,21 @@
                                         <div class="col-md-6 ml-auto mr-auto">
                                                 <div class="input-group mb-2">
                                                     <i class="mr-1 fa fa-user-o mt-1"></i>
-                                                    <p>Stuart Hall</p>
+                                                    <p>{{full_name}}</p>
                                                 </div>
                                                 <div class="input-group mb-2">
                                                     <i class="mr-1 mt-1 fa fa-envelope-o"></i>
-                                                    <p>stuarthall@gmail.com</p>
+                                                    <p>{{ email }}</p>
                                                 </div>
                                                 <div class="input-group mb-2">
                                                     <i class="mr-1 mt-1 fa fa-gift"></i>
-                                                    <p> 05/09/1967 </p>
+                                                    <p> {{ nascimento }} </p>
                                                 </div>
                                                 <div class="input-group mb-2">
                                                     <i class="mr-1 mt-1 fa fa-map-o"></i>
-                                                    <p>Rua Avelar, 42 </p>
+                                                    <p>{{ endereco }}</p>
                                                 </div>
-                                                <div class="input-group mb-2">
-                                                    <i class="mr-1 fa mt-1"></i>
-                                                    <p>Recife - PE</p>
-                                                </div>
+                                                
                                                 <button class="btn btn-danger btn-block btn-round mt-5">Editar</button>
                                         </div>
                                     </div>
@@ -119,29 +124,30 @@
                                 <div class="tab-pane" id="company" role="tabpanel">
                                     <div class="row">
                                         <div class="col-md-6 ml-auto mr-auto">
-                                            <form class="card-form">
+                                            
                                                 <div class="input-group mb-2">
-                                                    <span class="input-group-addon"><i class="mr-1 fa fa-user-o"></i></span>
-                                                    <input type="text" class="form-control pull-right" placeholder="Nome">
+                                                    <i class="mr-1 fa fa-user-o"></i>
+                                                    <p>{{ company }}</p>
+                                                </div>
+
+                                                <div class="input-group mb-2">
+                                                    <i class="mr-1 fa fa-envelope-o"></i>
+                                                    <p>{{ email }}</p>
                                                 </div>
                                                 <div class="input-group mb-2">
-                                                    <span class="input-group-addon"><i class="mr-1 fa fa-envelope-o"></i></span>
-                                                    <input type="text" class="form-control pull-right" placeholder="Email">
+                                                    <i class="mr-1 fa fa-yelp"></i>
+                                                    <p>{{ cnpj }}</p>
                                                 </div>
-                                                <div class="input-group mb-2">
-                                                    <span class="input-group-addon"><i class="mr-1 fa fa-gift"></i></span>
-                                                    <input type="text" class="form-control pull-right" placeholder="Nascimento">
-                                                </div>
-                                                <div class="input-group mb-2">
+                                                <!-- <div class="input-group mb-2">
                                                     <span class="input-group-addon"><i class="mr-1 fa fa-lock"></i></span>
                                                     <input type="text" class="form-control pull-right" placeholder="Nova senha">
                                                 </div>
                                                 <div class="input-group mb-2">
                                                     <span class="input-group-addon"><i class="mr-1 fa fa-lock"></i></span>
                                                     <input type="text" class="form-control pull-right" placeholder="Repetir senha">
-                                                </div>
+                                                </div> -->
                                                 <button class="btn btn-danger btn-block btn-round mt-5">Salvar</button>
-                                            </form>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -149,11 +155,29 @@
                                     <div class="row">
                                         <div class="col-md-6 ml-auto mr-auto">
                                             <form class="card-form">
+                                                {% for projeto in projetos %}
                                                 <div class="input-group mb-2">
-                                                    <span class="input-group-addon"><i class="mr-1 fa fa-user-o"></i></span>
-                                                    <input type="text" class="form-control pull-right" placeholder="Nome">
+
+                                                    
+
+                                                            <i class="mr-1 fa fa-user-o"></i>
+                                                            
+                                                            <dl>
+                                                                <dt>{{projeto.project.name}}</dt>
+                                                                {% if projeto.status == False %}
+                                                                <dd><small>Aguardando Aprovação</small></dd>
+                                                                {% else %}
+                                                                <dd><small>Aprovado</small></dd>
+                                                                {% endif %}
+                                                            <br>
+                                                    
+                                                            </dl>
+                                                            
+                                                    
+
                                                 </div>
-                                                <div class="input-group mb-2">
+                                                {% endfor %}
+                                                <!--<div class="input-group mb-2">
                                                     <span class="input-group-addon"><i class="mr-1 fa fa-envelope-o"></i></span>
                                                     <input type="text" class="form-control pull-right" placeholder="Email">
                                                 </div>
@@ -169,7 +193,7 @@
                                                     <span class="input-group-addon"><i class="mr-1 fa fa-lock"></i></span>
                                                     <input type="text" class="form-control pull-right" placeholder="Repetir senha">
                                                 </div>
-                                                <button class="btn btn-danger btn-block btn-round mt-5">Salvar</button>
+                                                <button class="btn btn-danger btn-block btn-round mt-5">Salvar</button> -->
                                             </form>
                                         </div>
                                     </div>
@@ -195,21 +219,36 @@
 </body>
 
 <!-- Core JS Files -->
-<script src="assets/js/jquery-3.2.1.js" type="text/javascript"></script>
-<script src="assets/js/jquery-ui-1.12.1.custom.min.js" type="text/javascript"></script>
-<script src="assets/js/popper.js" type="text/javascript"></script>
-<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="{% static 'assets/js/jquery-3.2.1.js' %}" type="text/javascript"></script>
+        <script src="{% static 'assets/js/jquery-ui-1.12.1.custom.min.js' %}" type="text/javascript"></script>
+        <script src="{% static 'assets/js/popper.js' %}" type="text/javascript"></script>
+        <script src="{% static 'assets/js/bootstrap.min.js' %}" type="text/javascript"></script>
 
-<!-- Switches -->
-<script src="assets/js/bootstrap-switch.min.js"></script>
+        <script src="{% static 'assets/js/api-ib.js' %}" type="text/javascript"></script>
 
-<!--  Plugins for Slider -->
-<script src="assets/js/nouislider.js"></script>
+        <!-- Switches -->
+        <script src="{% static 'assets/js/bootstrap-switch.min.js' %}"></script>
 
-<!--  Plugins for DateTimePicker -->
-<script src="assets/js/moment.min.js"></script>
-<script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+        <!--  Plugins for Slider -->
+        <script src="{% static 'assets/js/nouislider.js' %}"></script>
 
-<!--  Paper Kit Initialization snd functons -->
-<script src="assets/js/paper-kit.js?v=2.1.0"></script>
+        <!--  Plugins for DateTimePicker -->
+        <script src="{% static 'assets/js/moment.min.js' %}"></script>
+        <script src="{% static 'assets/js/bootstrap-datetimepicker.min.js' %}"></script>
+
+        <!--  Paper Kit Initialization snd functons -->
+        <script src="{% static 'assets/js/paper-kit.js' %}"></script>
+
+        <!-- Beraca Scripts -->
+        <script type="text/javascript">
+             $(function(){
+
+$('.dropdown-menu').on( 'click', 'a', function() {
+    var text = $(this).html();
+    var htmlText = text + ' <span class="caret"></span>';
+    $(this).closest('.dropdown').find('.dropdown-toggle').html(htmlText);
+});
+
+});
+        </script>
 </html>
