@@ -5,7 +5,10 @@
 		<!-- Content -->
 		<div class="wrapper">
 			<div class="page-header" style="background-image: url('{% static "assets/img/search-image.jpg" %}');">
-				<div class="container beraca-container">
+				
+
+                <!-- DIV container -->
+                <div class="container beraca-container">
 
                             <div class="typography-line">
                                 {% if user.is_authenticated %}
@@ -18,63 +21,57 @@
                                 Escolha o produto, range de investimento e o tipo de projeto a apoiar:
                             	</h5>
                             </div>
-                <div class="row justify-content">
+                    <div class="row justify-content">
 
-                <script type="application/javascript"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-
-
-
-    <select id="products" class="btn btn-danger dropdown-toggle">
-        <option value="">PRODUTO</option>
-    </select>
-&nbsp;
-    <select id="range" class="btn btn-danger dropdown-toggle">
-        <option value="">RANGE INVESTIMENTO</option>
-    </select>
-&nbsp;
-    <select id="categories" class="btn btn-danger dropdown-toggle">
-        <option value="" >TIPO DE PROJETO</option>
-    </select>
-&nbsp;
-
-&nbsp;
-    <p id="msg"></p>
-    <p id="msg1"></p>
-    <p id="msg2"></p>
-    <p id="msg3"></p>
+                        <script type="application/javascript"></script>
+                        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 
 
 
-				<button id="button-search" type="button" class="btn btn-warning btn-go" id="b1" value="b1" >BUSCAR</button>
-			</div>
+                        <select id="products" class="btn btn-danger dropdown-toggle">
+                            <option value="">PRODUTO</option>
+                        </select>
+                        &nbsp;
+                        <select id="range" class="btn btn-danger dropdown-toggle">
+                            <option value="">RANGE INVESTIMENTO</option>
+                        </select>
+                        &nbsp;
+                        <select id="categories" class="btn btn-danger dropdown-toggle">
+                            <option value="">TIPO DE PROJETO</option>
+                        </select>
+                        &nbsp;
+
+                        &nbsp;
+                        <p id="msg"></p>
+                        <p id="msg1"></p>
+                        <p id="msg2"></p>
+                        <p id="msg3"></p>
 
 
-<div class="row z-1">
-    <div class="col-md-12 mt-4">
-         <h6>Exibindo resultados de projetos com range de investimento menor ou igual a R$ 100000. Clique no título do projeto para saber mais</h6>
-    </div>
-                </div>
-                <div class="row z-1 mt-3">
-                            <div class="col-md-12">
-                                <div class="outer_product pt-20">
-                                    <div id="resultado" class="result-line mt-3">
 
+        				<button id="button-search" type="button" class="btn btn-warning btn-go" id="b1" value="b1" >BUSCAR</button>
+                    </div>
+
+
+                    <div class="row z-1">
+                        <div class="col-md-12 mt-4">
+                             <h6>Exibindo resultados de projetos com range de investimento menor ou igual a R$ 100000. Clique no título do projeto para saber mais</h6>
+                        </div>
+                    </div>
+                    <div class="row z-1 mt-3">
+                                <div class="col-md-12">
+                                    <div class="outer_product pt-20">
+                                        <div id="resultado" class="result-line mt-3">
+
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                </div>
+                    </div>
+		        </div><!-- End DIV container -->
 
+	   </div><!-- End Content -->
+        {% else %}q
+        <p>Please login to see this page.</p>
+        {% endif %}
 
-		</div>
-
-
-
-
-	</div>
-            {% else %}q
-    <p>Please login to see this page.</p>
-    {% endif %}
-
-			<!-- end content -->
 {% endblock content %}
