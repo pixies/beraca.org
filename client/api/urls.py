@@ -3,7 +3,7 @@ from django.conf.urls import url
 from rest_framework.urlpatterns import format_suffix_patterns
 
 from client.views import ProfileList, ProfileDetail, ProfileCreate,\
-                   ClientList, ClientDetail, ClientCreate, get_products_per_client, get_projects_rates_per_client, index, get_projects_per_categorie
+                   ClientList, ClientDetail, ClientCreate, get_products_per_client, get_projects_rates_per_client, index, get_categorie
 
 urlpatterns = [
     # Profile - api/profile/
@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^index/$', index, name='index'),
     url(r'^get_projects/(?P<pk>[0-9]+)/$', get_projects_rates_per_client, name='project-suppot-d'),
     url(r'^get_products/$', get_products_per_client, name='project-support-d'),
-    url(r'^get_categories/(?P<pk>[0-9]+)/$', get_projects_per_categorie, name='project-suppor'),
+    url(r'^get_categories/(?P<pk>.+)/$', get_categorie, name='project-suppor'),
 
 
 ]
