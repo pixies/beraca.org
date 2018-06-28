@@ -11,8 +11,10 @@ env = environ.Env()
 env.read_env(os.path.join(ROOT_DIR(), '.env'))
 
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -97,6 +99,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'ibcommunity.wsgi.application'
+
 
 
 # Database
@@ -192,7 +195,7 @@ STATICFILES_DIRS = [
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Media Files
 MEDIA_URL = '/media/'
@@ -206,7 +209,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 LOGIN_REDIRECT_URL = '/index/search/'
-LOGOUT_REDIRECT_URL = '/index/login/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 # Rest Framework Setup
 
