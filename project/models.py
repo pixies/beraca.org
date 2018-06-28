@@ -106,5 +106,5 @@ class ProjectcSupport(models.Model):
         verbose_name = _('Projeto apoiado')
         verbose_name_plural = _('Projetos apoiados')
 
-    def __str__(self):
-        return str(self.project)
+#    def __str__(self):
+#        return str(self.project.name)
