@@ -36,28 +36,25 @@
             <div class="collapse navbar-collapse" id="navbarToggler">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link"><i class="nc-icon nc-layout-11"></i>Repartir</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" target="" class="nav-link"><i class="nc-icon nc-ruler-pencil"></i>Projetos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" target="">
-                            <i class="nc-icon nc-shop"></i>Comunidades</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Perfil" data-placement="bottom" href="#" target="">
-                            <i class="nc-icon nc-badge"></i>
-                            <p class="d-lg-none">Meu Perfil</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" rel="tooltip" title="Perfil" data-placement="bottom" href="http://www.institutoberaca.org" target="_blank">
+                        <a class="nav-link" rel="tooltip" title="Instituto Beraca" data-placement="bottom" href="http://www.institutoberaca.org/apoieumprojeto" target="_blank">
                             <i class="nc-icon nc-alert-circle-i"></i>
-                            <p class="d-lg-none">Saiba Mais</p>
+                            <p class="d-lg-none">Know more</p>
                         </a>
                     </li>
-                </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Sair" data-placement="bottom" href="/accounts/profile/">
+                            <i class="nc-icon nc-circle-10"></i>
+                            <p class="d-lg-none">Profile</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="Sair" data-placement="bottom" href="/accounts/logout/">
+                            <i class="nc-icon nc-simple-remove"></i>
+                            <p class="d-lg-none">Logout</p>
+                        </a>
+                    </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -71,17 +68,20 @@
                     <div class="col-lg-5 ml-auto mr-auto">
                         <div class="card card-register">
                            <h1><i class="fa fa-check fa-3x"></i></h1>
-                           <form class="register-form" method="post" action="index/search/">
+                           <form class="register-form" method="post" action="/accounts/login/">
+
                                {% csrf_token %}
-                            <div class="input-group mb-2">
+                                <div class="input-group mb-2">
                                 <span class="input-group-addon"><i class="mr-1 fa fa-envelope-o"></i></span>
                                 <input type="text" class="form-control pull-right" name="username" autofocus maxlength="254" required id="id_username" placeholder="Email" />
                             </div>
                             <div class="input-group mb-2">
                                 <span class="input-group-addon"><i class="mr-1 fa fa-lock"></i></span>
-                                <input type="password" class="form-control pull-right" name="password" required id="id_password" placeholder="Password" />
+<input type="password" class="form-control pull-right" name="password" required id="id_password" placeholder="Password" />
 
                             </div>
+                           
+
                             <button class="btn btn-danger btn-block btn-round">Sign-in</button>
                         </form>
                         <div class="forgot">
