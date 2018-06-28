@@ -15,13 +15,13 @@ class Profile(models.Model):
     image = models.ImageField(_("Imagem do perfil"),
                               upload_to='accounts/profile/',
                               blank=True, null=True)
-    birth_date = models.DateField(_("Data de nascimento"), blank=False)
-    is_support = models.BooleanField(_("Técnico"))
-    is_manager = models.BooleanField(_("Gestor"))
-    is_admin = models.BooleanField(_("Administrador"))
+    #birth_date = models.DateField(_("Data de nascimento"), blank=True, null=True, default='2015-02-12 00:00')
+    is_support = models.BooleanField(_("Técnico"), default=False)
+    is_manager = models.BooleanField(_("Gestor"), default=False)
+    is_admin = models.BooleanField(_("Administrador"), default=False)
     address = models.OneToOneField(Address, verbose_name=_("Endereço"),
                                    on_delete=models.CASCADE,
-                                   related_name='profile')
+                                   related_name='profile', blank=True, null=True, default="")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
